@@ -1,0 +1,37 @@
+{% extends 'web/base2.html' %}
+{% block body %}
+
+        <div class="container">
+            <div class="col-md-offset-3 col-md-5">
+            <div class="form-group ">
+                <form  method="POST" autocomplete="off">
+                    {% csrf_token %}
+                <h3 class="page-header text-primary text-center">RATION SHOP REISTRATION </h3>
+                <center><label class="text-danger">{{ msg }}</label></center>
+                <div class="form-group pull-left">
+                    <label>Shop Number</label>
+                    <input type="text" class="form-control" name="shop_number" required >
+                    <br>
+                    <label>District</label>
+                    <input type="text" class="form-control" name="district" required >
+                </div>
+                <div class="form-group pull-right">
+                    <label>Taluk(TK)</label>
+                    <input type="text" class="form-control" name="taluk" required>
+                    <br>
+                    <label>Location</label>
+                    <input type="text" class="form-control" name="location" required >
+                </div>
+                <div class="form-group pull-right">
+                    <input type="submit" value="SUBMIT" class="btn btn-primary" >
+                </div>
+                </form>
+                <div class="form-group pull-left">
+                    <a href="{% url 'home' %}">
+                        <button style="margin-right: 5px;" value="BACK"  class="btn btn-primary">BACK</button>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+{% endblock %}

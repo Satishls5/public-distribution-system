@@ -1,0 +1,59 @@
+{% extends 'web/base2.html' %}
+{% block body %}     
+        <div class="container">
+            <div class="col-md-offset-3 col-md-6">
+                <form  method="POST" action="{% url 'addshopstock' %}" autocomplete="off">
+                    {% csrf_token %}
+                <h3 class="page-header text-primary text-center">RATION SHOP STOCK UPDATE </h3>
+                <center><label class="text-danger">{{ msg }}</label></center><br>
+                <div class="form-group">
+                    <label>Ration Shop</label>
+                    <input type="text" class="form-control" name="rationshop" required ><br>
+                </div>
+                <div class="form-group ">
+                    <label>Date</label>
+                    <input type="date" class="form-control" name="date" required >
+                </div><br>
+                <div class="form-group ">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" name="productname" required>
+                </div><br>
+                <div class="form-group ">
+                    <label>Quantity(kg/ltr)</label>
+                    <input type="number" class="form-control" name="quantity" required >
+                </div>
+
+                <div class="form-group pull-right">
+                    <input type="submit" value="SUBMIT" class="btn btn-primary" >
+                </div><br><hr>
+                </form>
+            </div>
+            <div class="col-md-offset-2 col-md-8">
+                <h3 class="page-header text-primary text-center">RATION SHOP STOCK Details</h3>
+                <table class="table table-border col-md-20">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Shop Number</th>
+                            <th>Date</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    {% for data in dataofstock %}
+                    <tbody>
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                            <td>{{data.rationshop}}</td>
+                            <td>{{data.date}}</td> 
+                            <td>{{data.productname}}</td>
+                            <td>{{data.quantity}}</td>
+                            <td><a class="btn btn-success" href="{% url 'update_stock' data.id %}">Update</a> </td>
+                        </tr>                     
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+    </div>
+ {% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'district_collector/collector_base2.html' %}
+{% block body %}
+<div class="col-md-offset-2 col-md-8">
+    <h3 class="page-header text-primary text-center">RATIONSHOP STOCK Details</h3>
+    <table class="table table-border col-md-10">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Shop Number</th>
+                <th>Date</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        {% for data in dataofstock %}
+        <tbody>
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{data.rationshop}}</td>
+                <td>{{data.date}}</td> 
+                <td>{{data.productname}}</td>
+                <td>{{data.quantity}}</td>
+            </tr>                     
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+</div>
+{% endblock %}

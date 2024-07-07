@@ -1,0 +1,42 @@
+{% extends 'web/base2.html' %}
+{% block body %}
+<h3 class="page-header text-primary text-center">RATIONSHOP OFFICER REGISTRATION</h3>
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="col-md-offset-4 col-md-4">
+        <center><label class="text-danger">{{ msg }}</label></center>
+        <div class="form-group">
+            <label for="r_userid">ID Number</label>
+            <input type="text" name="r_userid" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+            <label for="ration_shop_no">RATIONSHOP Number</label>
+            <input type="text" name="ration_shop_no" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+            <label for=officer_name">Officer Name</label>
+            <input type="text" name="officer_name" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" name="address" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="mail">Email</label>
+            <input type="text" name="mail" class="form-control" required="required"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control" onclick="return alert('RationShop Officer Registered Successfully!')"><span class="glyphicon glyphicon-save"></span> Submit</button>
+        </div>
+    </div>
+</form><br><br><br><br>
+{% endblock %}

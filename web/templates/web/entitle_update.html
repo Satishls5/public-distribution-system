@@ -1,0 +1,25 @@
+{% extends 'web/base2.html' %}
+{% block body %}
+        <div class="container">
+            <div class="col-md-offset-3 col-md-5">
+                <form  method="POST" autocomplete="off">
+                    {% csrf_token %}
+                <h3 class="page-header text-primary text-center"> Ration Card Stock Updation </h3>
+                <h4 class="page-subheader text-black text-center">Every month stock updation </h4><br>
+                <center><label class="text-danger">{{ msg }}</label></center>
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" value="{{data.product_name}}" name="product_name" required >
+                </div>
+                <div class="form-group">
+                    <label>Remaining Quantity</label>
+                    <input type="text" class="form-control" value="{{data.balance_quantity}}" name="re_quantity" required>
+                </div>
+                <div class="form-group pull-right">
+                    <input type="submit" value="UPDATE" class="btn btn-primary" onclick="return alert('Stock updated Successfully!')">
+                </div>
+                </form>
+                
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'Ration_Shop/Rationshop_officer_base2.html' %}
+{% block body %}
+<div class="col-md-offset-3 col-md-5">
+    <h3 class="page-header text-primary text-center">PRODUCT QUANTITY Details</h3><br>
+    <table class="table table-border"><br>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Product Name</th>
+                <th>Available Quantity</th>
+            </tr>
+        </thead>
+        {% for data in datas %}
+        <tbody>
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{data.productname}}</td>
+                <td>{{data.quantity}}</td>
+            </tr>                     
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

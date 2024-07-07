@@ -1,0 +1,31 @@
+{% extends 'web/base2.html' %}
+{% block body %}
+
+    <div class="col-md-offset-3 col-md-5">
+        <h3 class="page-header text-primary text-center">RATIONSHOP LIST</h3>
+        <table class="table table-border">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>RationShop Number</th>
+                    <th>District</th>
+                    <th>Taluk(tk)</th>
+                    <th>Village Name</th>
+                </tr>
+            </thead>
+            {% for data in dataofshop %}
+            <tbody>
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{data.shopno}}</td>
+                    <td>{{data.district}}</td>
+                    <td>{{data.taluk}}</td>
+                    <td>{{data.location}}</td>
+                </tr>                     
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+             
+            </div>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'web/base2.html' %}
+{% block body %}
+<div class="inner-content-container pds-reports" id="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-18">
+                <h4 style="color: red;">பொது விநியோகத் திட்ட அறிக்கைகள்</h4>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-18 breadcrump">
+                <p>
+                    <b>தமிழ்நாடு</b>
+                    <span class="service-date fright">டிசம்பர் 2023</span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-24">
+                <div class="clear"></div>
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <table style="background-color: rgb(248, 241, 241);  border-color: black;">
+                        <tr>
+                            <td>
+                                <div class="state_rprt clearfix">
+                                    <div class="pds-report-clm2 distcol">
+                                        <div class="colwrapper">
+                                            <h6 className=" table border-">39</h6>
+                                            <p>மாவட்டங்கள்</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pds-report-clm2 talukcol">
+                                    <div class="colwrapper">
+                                        <h6 class="">317</h6>
+                                        <p>தாலுகாக்கள்</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pds-report-clm2 fpscol">
+                                    <div class="colwrapper">
+                                        <h6>34793</h6>
+                                        <p>நியாய விலை கடைகள்</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="pds-report-clm2 fcardcol">
+                                    <div class="colwrapper">
+                                        <h6>22375751</h6>
+                                        <p>குடும்ப அட்டைகள்</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td><br>
+                                <div class="pds-report-clm2 benefcol">
+                                    <div class="colwrapper">
+                                        <h6>69984007</h6>
+                                        <p>வாடிக்கையாளர்கள்</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><br>
+                                <div class="pds-report-clm2 adharcol">
+                                    <div class="colwrapper">
+                                        <h6>69579331</h6>
+                                        <p>ஆதார் பதிவுகள்</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><br>
+                                <div class="pds-report-clm2 mobcol">
+                                    <div class="colwrapper">
+                                        <h6>22370732</h6>
+                                        <p>கைபேசி பதிவுகள்</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+
+    <br>
+    <br>
+   <ul class="col-18">
+    <br>
+    <li><a href="{% url 'e_card' %}"> Add New Card</a></li>
+   </ul>
+   <ul class="col-18">
+    <li><a href="{% url 'card_entitlement' %}">Card Entitlement </a></li>
+   </ul><br>
+   <ul class="col-30">
+    <li><a href="{% url 'rationshop_officer_register' %}">Rationshop Officer Registration</a></li>
+   </ul>
+</div>
+</div>   
+
+
+ {% endblock %}

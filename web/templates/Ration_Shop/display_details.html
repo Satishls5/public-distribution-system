@@ -1,0 +1,20 @@
+{% extends 'Ration_Shop/Rationshop_officer_base2.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <!-- Left side - Table -->
+        <div class="col-md-7">
+            <h3 class="page-header text-primary text-left">BILL DETAILS</h3>
+            <br>
+            <label style="font-family: 'Times New Roman', Times, serif;"> Card Number : {{msg_no}}</label><br>
+            <label style="font-family: 'Times New Roman', Times, serif;"> Product Name : {{msg_no}}</label><br>
+            <label style="font-family: 'Times New Roman', Times, serif;"> Price : {{msg1}}</label><br><br>
+            <button><a href="{% url 'rationshop_billing_index' %}">Add another</a> </button>
+
+        </div>
+    </div>
+</div>
+
+
+        
+{% endblock %}

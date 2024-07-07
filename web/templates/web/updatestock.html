@@ -1,0 +1,31 @@
+{% extends 'web/base2.html' %}
+{% block body %}     
+        <div class="container">
+            <div class="col-md-offset-3 col-md-6">
+                <form  method="POST" autocomplete="off">
+                    {% csrf_token %}
+                <h3 class="page-header text-primary text-center">RATION SHOP STOCK UPDATE </h3>
+                <div class="form-group">
+                    <label>Ration Shop</label>
+                    <input type="text" class="form-control" value="{{data.rationshop}}" name="rationshop" required ><br>
+                </div>
+                <div class="form-group ">
+                    <label>Date</label>
+                    <input type="date" class="form-control" value="{{data.date}}" name="date" required >
+                </div><br>
+                <div class="form-group ">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" value="{{data.productname}}" name="productname" required>
+                </div><br>
+                <div class="form-group ">
+                    <label>Quantity(kg/ltr)</label>
+                    <input type="number" class="form-control" value="{{data.quantity}}" name="quantity" required >
+                </div>
+
+                <div class="form-group ">
+                    <center><input type="submit" value="SUBMIT" class="btn btn-primary" ></center>
+                </div><br><hr>
+                </form>
+            </div>
+        </div>
+    {% endblock %}

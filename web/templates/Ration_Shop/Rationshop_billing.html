@@ -1,0 +1,66 @@
+{% extends 'Ration_Shop/Rationshop_officer_base2.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <!-- Left side - Table -->
+        <div class="col-md-7">
+            <h3 class="page-header text-primary text-left">PRODUCT QUANTITY DETAILS</h3>
+            <br>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Ration Card</th>
+                        <th>Product Name</th>
+                        <th>Required Quantity</th>
+                        <th>Balance Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for data in datas %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ data.card_number_id }}</td>
+                            <td>{{ data.product_name }}</td>
+                            <td>{{ data.required_quantity }}</td>
+                            <td>{{ data.balance_quantity }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Right side - Form -->
+        <div class="col-md-5">
+            <h3 class="page-header text-primary text-center">RATION CARD ENTITLEMENT</h3>
+            <form method="POST"  autocomplete="off">
+                <center><label class="text-danger">{{ msg }}</label></center>
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Card Number</label>
+                    <input type="text" class="form-control" name="card_number" required>
+                </div>
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" name="product_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Quantity (ltr/kg)</label>
+                    <input type="text" class="form-control" name="quantity" required>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" class="form-control" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Price (Rs.) :  {{msg}}</label>
+                </div>
+                <div class="form-group text-right">
+                    <input type="submit" value="ADD" class="btn btn-primary">
+                    <input type="reset" value="CLEAR" class="btn btn-danger">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

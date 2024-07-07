@@ -1,0 +1,24 @@
+{% extends 'Ration_Shop/Rationshop_officer_base.html' %}
+{% block body %}
+<br><br><br>
+<form method="POST" action="{% url 'rationshop_index' %}">
+    {% csrf_token %}
+ 
+    <div class="col-md-offset-4 col-md-4 ">
+        <div class="form-group">
+            <label for="username">OFFICER NAME</label>
+            <input type="text" name="officer_username" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="password">PASSWORD</label>
+            <input type="password" name="officer_password" class="form-control" required="required"/>
+        </div>
+        <center><label class="text-danger">{{ msg }}</label></center>
+        <br />
+        <div class="form-group"> 
+            <button class="btn btn-primary form-control"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

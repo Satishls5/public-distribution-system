@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'web/css/style.css' %}" />
+    <style>
+        /* CSS code for logo alignment */
+        .logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px; 
+            max-width: 100px; 
+        }
+        .header-content {
+            display: inline-block;
+            vertical-align: middle;
+            float: center;
+        }
+        h2, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <img class="logo" src="{% static 'web/images/TamilNadu_Logo.png' %}" alt="Logo">
+                <div class="header-content col-md-offset-2 ">
+                    <div class="text-center">
+                        <h2>PUBLIC DISTRIBUTION SYSTEM</h2>
+                        <p>DISTRICT COLLECTOR</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="top-area">
+        <div class="header-area">
+            <!-- Start Navigation -->
+            <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+    
+                <div class="container">
+    
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="{% url 'home' %}">District</a>
+    
+                    </div><!--/.navbar-header-->
+                    <!-- End Header Navigation -->
+    
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                        <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li class="scroll"><a href="{% url 'collector_login' %}"><span class="glyphicon glyphicon-log-in"></span>  Login </a></li>
+                            <li class="scroll"><a href="{% url 'collector_register' %}"><span class="glyphicon glyphicon-user"></span>  Signup</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+    
+    <div  style="background-color: rgb(244, 247, 247)">
+   
+        {% block body %}
+        {% endblock %}
+    </div><br><br><br><br><br><br>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Rationshop Management System. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
